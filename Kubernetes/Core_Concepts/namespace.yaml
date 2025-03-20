@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: shubham-ns
+
+# kubectl apply -f namespace.yaml (apply = create + update)

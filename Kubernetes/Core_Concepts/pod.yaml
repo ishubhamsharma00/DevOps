@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+metadata: 
+  name: nginx-pod
+  namespace: shubham-ns
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+
+# kubectl get pods -n shubham-ns
+# kubectl exec -it pod/nginx-pod -n shubham-ns -- bash
+# curl localhost from inside of nginx pod to check if pod is running or not
+# kubectl describe pod <pod name> -n <namespace>
