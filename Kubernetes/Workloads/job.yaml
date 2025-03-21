@@ -1,0 +1,24 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: hello-job
+  namespace: default
+spec:
+  completions: 1  # How many time i want to run the pod/job
+  parallelism: 1  # How many jobs i want to run simultaneously
+  template:
+    metadata:
+      name: hello-job
+      labels:
+       app: hello-job
+    spec:
+      containers:
+      - name: hello-job-container
+        image: busybox
+        command: ["sh", "-c", "echo hello friends! && sleep 15"]
+      restartPolicy: Never
+
+# Jobs are used where one time running of commands/script is needed.
+# kubectl apply -f job.yaml 
+# kubectl get pods -o wide
+# kubectl logs hello-job-hm8qz
