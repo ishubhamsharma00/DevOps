@@ -1,0 +1,22 @@
+kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: nginx-daemon
+  namespace: shubham-ns
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      name: nginx-daemonset
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
+# DaemonSet makes 1 pod on each worker node
