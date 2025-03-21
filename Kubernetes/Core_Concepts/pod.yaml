@@ -14,3 +14,4 @@ spec:
 # kubectl exec -it pod/nginx-pod -n shubham-ns -- bash
 # curl localhost from inside of nginx pod to check if pod is running or not
 # kubectl describe pod <pod name> -n <namespace>
+# kubectl delete -f pod.yaml 
