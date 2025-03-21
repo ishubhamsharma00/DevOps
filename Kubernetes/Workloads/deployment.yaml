@@ -24,3 +24,8 @@ spec:
 # Deployment: Makes replicas as specified along with rolling updates
 # kubectl get deployment -n shubham-ns
 # kubectl scale deployment nginx-deployment --replicas=5 -n shubham-ns
+
+# To make rolling update, i.e. to make changes one by one on pods without downtime,
+# lets update the nginx image to 1.27.3
+
+# => kubectl set image deployment/nginx-deployment -n shubham-ns nginx=nginx:1.27.3
